@@ -4,20 +4,23 @@ var gutil = require( 'gulp-util' );
 module.exports = function ( option ) {
     'use strict';
 
-    var CONST_PATTERN = '<\\!--\\s*inject-style\\s*src\\s*=\\s*[\'"]?(.*?)[\'"]?\\s*-->';
+    var CONST_PATTERN = '<\\!--\\s*inject-style\\s*(.*)?\\s*-->';
 
     if ( !option ) {
         option = {};
     }
 
-    if ( option.match ) {
-        if ( !( option.match instanceof RegExp ) ) {
+    if ( option.match_pattern ) {
+        try {
+            new RegExp(option.match_pattern);
+        } catch (e) {
             this.emit( 'error',
-                new gutil.PluginError( 'gulp-style-inject', '`match` parameter is not a RegExp instance.' ) );
+                new gutil.PluginError( 'gulp-style-inject', ' Invalid `match_pattern` parameter. Regular expression string required.' ) );
         }
     } else {
-        option.match = CONST_PATTERN;
+        option.match_pattern = CONST_PATTERN;
     }
+
     if ( typeof option.transform !== 'function' && option.transform ) {
         this.emit( 'error',
             new gutil.PluginError( 'gulp-style-inject', 'Invalid transformation in `transform` parameter.' ) );
