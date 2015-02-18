@@ -1,4 +1,3 @@
-(PLUGIN AUTHOR: Please read [Plugin README conventions](https://github.com/wearefractal/gulp/wiki/Plugin-README-Conventions), then delete this line)
 
 # gulp-style-inject
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
@@ -18,23 +17,10 @@ Then, add it to your `gulpfile.js`:
 ```javascript
 var style-inject = require("gulp-style-inject");
 
-gulp.src("./src/*.ext")
-	.pipe(style-inject({
-		msg: "Hello Gulp!"
-	}))
+gulp.src("./src/*.html")
+	.pipe(styleInject())
 	.pipe(gulp.dest("./dist"));
 ```
-
-## API
-
-### style-inject(options)
-
-#### options.msg
-Type: `String`  
-Default: `Hello World`
-
-The message you wish to attach to file.
-
 
 ## License
 
