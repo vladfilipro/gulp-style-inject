@@ -37,6 +37,23 @@ Example:
     <span>Some other text</span>
 </div>
 ```
+Output
+```html
+<div>
+<style>
+p {
+    background-color: red;
+}
+</style>
+<style>
+span {
+    background-color: green;
+}
+</style>
+    <p>Some text</p>
+    <span>Some other text</span>
+</div>
+```
 
 ## License
 
