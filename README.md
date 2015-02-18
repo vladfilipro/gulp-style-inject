@@ -22,6 +22,22 @@ gulp.src("./src/*.html")
 	.pipe(gulp.dest("./dist"));
 ```
 
+All your html files should include the following tag:
+
+```html
+    <!-- inject-style src="./path/file.css" -->
+```
+
+Example:
+```html
+<div>
+<!-- inject-style src="./test/p.css" -->
+<!-- inject-style src="./test/span.css" -->
+    <p>Some text</p>
+    <span>Some other text</span>
+</div>
+```
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
