@@ -18,7 +18,7 @@ Then, add it to your `gulpfile.js`:
 var style-inject = require("gulp-style-inject");
 
 gulp.src("./src/*.html")
-	.pipe(styleInject())
+	.pipe(style-inject())
 	.pipe(gulp.dest("./dist"));
 ```
 

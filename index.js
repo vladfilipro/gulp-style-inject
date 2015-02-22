@@ -24,6 +24,10 @@ module.exports = function ( option ) {
         option.match_pattern = CONST_PATTERN;
     }
 
+    if (!option.path) {
+        option.path = '';
+    }
+
     function throwError( msg ) {
         self.emit( 'error',
             new gutil.PluginError( 'gulp-style-inject', msg ) );
@@ -79,7 +83,7 @@ module.exports = function ( option ) {
 
             contents = contents.replace( new RegExp( option.match_pattern, 'gi' ), function ( match, parameters ) {
                 var attrs = getAttributes( parameters );
-                return getStyleFile( attrs.src );
+                return getStyleFile( option.path + attrs.src );
             } );
 
             file.contents = new Buffer( contents );

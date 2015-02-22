@@ -1,6 +1,6 @@
 {
     "name": "gulp-style-inject",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A plugin for Gulp. Inject css file into html style tags.",
     "keywords": [
         "gulpplugin"
