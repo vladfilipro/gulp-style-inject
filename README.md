@@ -15,10 +15,10 @@ npm install --save-dev gulp-style-inject
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var style-inject = require("gulp-style-inject");
+var styleInject = require("gulp-style-inject");
 
 gulp.src("./src/*.html")
-	.pipe(style-inject())
+	.pipe(styleInject())
 	.pipe(gulp.dest("./dist"));
 ```
 
