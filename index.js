@@ -28,13 +28,19 @@ module.exports = function ( option ) {
         option.path = '';
     }
 
+    if (option.encapsulated === undefined) {
+        option.encapsulated = true
+    } else {
+        option.encapsulated = !!option.encapsulated
+    }
+
     function throwError( msg ) {
         self.emit( 'error',
             new gutil.PluginError( 'gulp-style-inject', msg ) );
     }
 
     function transformResponse( contents ) {
-        return '<style>\n' + contents + '\n</style>';
+        return (option.encapsulated) ? '<style>\n' + contents + '\n</style>' : contents;
     }
 
     function getAttributes( params ) {

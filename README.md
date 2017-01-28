@@ -55,6 +55,26 @@ span {
 </div>
 ```
 
+## Options
+
+The plugin can be used with an options object
+
+```javascript
+var styleInject = require("gulp-style-inject");
+
+gulp.src("./src/*.html")
+	.pipe(styleInject({
+		encapsulated: false,
+		path: './test/styles'
+	}))
+	.pipe(gulp.dest("./dist"));
+```
+
+Available options:
+- *encapsulated*: Type boolean, (default: true) - Specifies if the style code should be injected using a style tag
+- *path*: Type string, (default: '') - Specifies the base path of all style files
+- *match_pattern*: Type regular expression, (default: <\\!--\\s*inject-style\\s*(.*?)\\s*-->) - Specifies the pattern to look for when replacing
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
