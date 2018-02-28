@@ -57,10 +57,10 @@ module.exports = function ( option ) {
     }
 
     function getStyleFile( source ) {
-        if ( source ) {
+        if ( source && fs.existsSync( source ) ) {
             return transformResponse( fs.readFileSync( source ) );
         } else {
-            throwError( 'ERROR: No source file specified.' );
+            throwError( 'ERROR: Source file cannot be found.' );
         }
     }
 

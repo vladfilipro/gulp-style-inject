@@ -1,6 +1,6 @@
 {
     "name": "gulp-style-inject",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A plugin for Gulp. Inject css file into html style tags.",
     "keywords": [
         "gulpplugin"
@@ -31,8 +31,10 @@
         "node": ">=0.8.0",
         "npm": ">=1.2.10"
     },
-    "licenses": [ {
-        "type": "MIT",
-        "url": "http://github.com/vladfilipro/gulp-style-inject/raw/master/LICENSE"
-    } ]
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/vladfilipro/gulp-style-inject/raw/master/LICENSE"
+        }
+    ]
 }
