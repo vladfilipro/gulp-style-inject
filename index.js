@@ -61,7 +61,7 @@ module.exports = function ( option ) {
         if ( source && fs.existsSync( source ) ) {
             return transformResponse( fs.readFileSync( source ) );
         } else {
-            throwError( 'ERROR: Source file cannot be found.' );
+            throwError( 'ERROR: Source file (' + source + ') cannot be found.' );
         }
     }
 
