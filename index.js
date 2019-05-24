@@ -1,6 +1,7 @@
 var through = require( 'through2' );
 var gutil = require( 'gulp-util' );
 var fs = require( 'fs' );
+var path = require('path');
 
 module.exports = function ( option ) {
     'use strict';
@@ -89,7 +90,7 @@ module.exports = function ( option ) {
 
             contents = contents.replace( new RegExp( option.match_pattern, 'gi' ), function ( match, parameters ) {
                 var attrs = getAttributes( parameters );
-                return getStyleFile( option.path + attrs.src );
+                return getStyleFile( path.join(option.path , attrs.src) );
             } );
 
             file.contents = new Buffer( contents );
