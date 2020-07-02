@@ -9,21 +9,21 @@ require( 'mocha' );
 
 delete require.cache[ require.resolve( '../' ) ];
 
-var gutil = require( 'gulp-util' ),
+var Vinyl = require('vinyl'),
     styleInject = require( '../' );
 
 describe( 'gulp-style-inject', function () {
 
     it( 'should produce expected file via buffer', function ( done ) {
 
-        var srcFile = new gutil.File( {
+        var srcFile = new Vinyl( {
             path: 'test/fixtures/index.html',
             cwd: 'test/',
             base: 'test/fixtures',
             contents: fs.readFileSync( 'test/fixtures/index.html' )
         } );
 
-        var expectedFile = new gutil.File( {
+        var expectedFile = new Vinyl( {
             path: 'test/expected/index.html',
             cwd: 'test/',
             base: 'test/expected',
@@ -53,7 +53,7 @@ describe( 'gulp-style-inject', function () {
 
     it( 'should error on stream', function ( done ) {
 
-        var srcFile = new gutil.File( {
+        var srcFile = new Vinyl( {
             path: 'test/fixtures/index.html',
             cwd: 'test/',
             base: 'test/fixtures',

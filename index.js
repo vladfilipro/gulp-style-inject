@@ -1,5 +1,5 @@
 var through = require( 'through2' );
-var gutil = require( 'gulp-util' );
+var PluginError = require('plugin-error');
 var fs = require( 'fs' );
 var path = require('path');
 
@@ -19,7 +19,7 @@ module.exports = function ( option ) {
             new RegExp( option.match_pattern );
         } catch ( e ) {
             this.emit( 'error',
-                new gutil.PluginError( 'gulp-style-inject', ' Invalid `match_pattern` parameter. Regular expression string required.' ) );
+                new PluginError( 'gulp-style-inject', ' Invalid `match_pattern` parameter. Regular expression string required.' ) );
         }
     } else {
         option.match_pattern = CONST_PATTERN;
@@ -37,7 +37,7 @@ module.exports = function ( option ) {
 
     function throwError( msg ) {
         self.emit( 'error',
-            new gutil.PluginError( 'gulp-style-inject', msg ) );
+            new PluginError( 'gulp-style-inject', msg ) );
     }
 
     function transformResponse( contents ) {
@@ -80,7 +80,7 @@ module.exports = function ( option ) {
         if ( file.isStream() ) {
             // accepting streams is optional
             this.emit( 'error',
-                new gutil.PluginError( 'gulp-style-inject', 'Stream content is not supported' ) );
+                new PluginError( 'gulp-style-inject', 'Stream content is not supported' ) );
             return callback();
         }
 
