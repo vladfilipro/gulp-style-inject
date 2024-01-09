@@ -3,7 +3,7 @@
 
 var fs = require( 'fs' ),
     es = require( 'event-stream' ),
-    should = require( 'should' );
+    assert = require('assert')
 
 require( 'mocha' );
 
@@ -33,17 +33,17 @@ describe( 'gulp-style-inject', function () {
         var stream = styleInject();
 
         stream.on( 'error', function ( err ) {
-            should.exist( err );
+            assert.ok( typeof err === 'object' );
             done( err );
         } );
 
         stream.on( 'data', function ( newFile ) {
 
-            should.exist( newFile );
-            should.exist( newFile.contents );
+            assert.ok( typeof newFile === 'object' );
+            assert.ok( newFile.contents );
 
-            String( newFile.contents )
-                .should.equal( String( expectedFile.contents ) );
+            assert.equal(String( newFile.contents ), String( expectedFile.contents ) );
+            
             done();
         } );
 
@@ -63,7 +63,7 @@ describe( 'gulp-style-inject', function () {
         var stream = styleInject();
 
         stream.on( 'error', function ( err ) {
-            should.exist( err );
+            assert.ok( typeof err === 'object' );
             done();
         } );
 

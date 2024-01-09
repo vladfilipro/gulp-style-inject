@@ -93,7 +93,7 @@ module.exports = function ( option ) {
                 return getStyleFile( path.join(option.path , attrs.src) );
             } );
 
-            file.contents = new Buffer( contents );
+            file.contents = Buffer.from( contents );
             this.push( file );
             return callback();
         }

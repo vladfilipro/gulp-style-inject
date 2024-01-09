@@ -1,6 +1,6 @@
 {
     "name": "gulp-style-inject",
-    "version": "0.1.3",
+    "version": "1.0.0",
     "description": "A plugin for Gulp. Inject css file into html style tags.",
     "keywords": [
         "gulpplugin"
@@ -12,21 +12,16 @@
     },
     "repository": "vladfilipro/gulp-style-inject",
     "scripts": {
-        "test": "istanbul test ./node_modules/mocha/bin/_mocha --report html -- test/*.js --reporter spec",
-        "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+        "test": "./node_modules/mocha/bin/_mocha --report html -- test/*.js --reporter spec"
     },
     "dependencies": {
-        "plugin-error": "^1.0.1",
-        "through2": "0.6.3",
-        "vinyl": "^2.2.0"
+        "plugin-error": "^2.0.1",
+        "through2": "^4.0.2",
+        "vinyl": "^3.0.0"
     },
     "devDependencies": {
-        "mocha": "2.1.0",
-        "coveralls": "2.11.2",
-        "mocha-lcov-reporter": "0.0.1",
-        "istanbul": "0.3.5",
-        "event-stream": "3.2.2",
-        "should": "5.0.0"
+        "mocha": "^10.2.0",
+        "event-stream": "^4.0.1"
     },
     "engines": {
         "node": ">=0.8.0",

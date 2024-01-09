@@ -1,6 +1,6 @@
 
 # gulp-style-inject
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
+[![NPM version][npm-image]][npm-url]
 
 > style-inject plugin for [gulp](https://github.com/wearefractal/gulp)
 
